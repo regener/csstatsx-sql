@@ -1504,7 +1504,7 @@ public plugin_end()
 	// выполняем накопившиеся запросы при смене карты или выключении серваре
 	DB_FlushQuery()
 	
-	if(sql_con != Empty_Handle) {
+	if(sql != Empty_Handle) {
 		SQL_FreeHandle(sql)
 	}
 	
@@ -3129,7 +3129,7 @@ public SQL_Handler(failstate,Handle:sqlQue,err[],errNum,data[],dataSize){
 			new lastQue[QUERY_LENGTH]
 			SQL_GetQueryString(sqlQue,lastQue,charsmax(lastQue)) // узнаем последний SQL запрос
 			
-			log_amx("SQL query failed")
+			log_amx("SQL query failed @ SQL_Handler(...)")
 			log_amx("[ %d ] %s",errNum,err)
 			log_amx("[ SQL ] %s",lastQue)
 			
@@ -4498,7 +4498,7 @@ public native_get_stats(plugin_id,params)
 		new errNum,err[256]
 		errNum = SQL_QueryError(sqlQue,err,charsmax(err))
 		
-		log_amx("SQL query failed")
+		log_amx("SQL query failed @ native_get_stats(...)")
 		log_amx("[ %d ] %s",errNum,err)
 		log_amx("[ SQL ] %s",query)
 		
@@ -4616,7 +4616,7 @@ public native_get_stats2(plugin_id,params)
 		new errNum,err[256]
 		errNum = SQL_QueryError(sqlQue,err,charsmax(err))
 		
-		log_amx("SQL query failed")
+		log_amx("SQL query failed @ native_get_stats2(...)")
 		log_amx("[ %d ] %s",errNum,err)
 		log_amx("[ SQL ] %s",query)
 		
@@ -4776,7 +4776,7 @@ public native_get_stats3(plugin_id,params)
 		new errNum,err[256]
 		errNum = SQL_QueryError(sqlQue,err,charsmax(err))
 		
-		log_amx("SQL query failed")
+		log_amx("SQL query failed @ native_get_stats3(...)")
 		log_amx("[ %d ] %s",errNum,err)
 		log_amx("[ SQL ] %s",query)
 		
@@ -4957,7 +4957,7 @@ public DB_OpenConnection()
 	
 	if(errNum)
 	{
-		log_amx("SQL query failed")
+		log_amx("SQL query failed @ DB_OpenConnection()")
 		log_amx("[ %d ] %s",errNum,err)
 			
 		return false
