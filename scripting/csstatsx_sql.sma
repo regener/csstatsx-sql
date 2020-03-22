@@ -1,5 +1,5 @@
 /*
-*	CSStatsX SQL						v. 0.7.4+2
+*	CSStatsX SQL						v. 0.7.4+3
 *	by serfreeman1337		https://github.com/serfreeman1337
 */
 
@@ -17,10 +17,10 @@
 #include <fakemeta>
 
 #define PLUGIN "CSStatsX SQL"
-#define VERSION "0.7.4+2"
+#define VERSION "0.7.4+3"
 #define AUTHOR "serfreeman1337"
 
-#define LASTUPDATE "14, May(05), 2019"
+#define LASTUPDATE "22, March(03), 2020"
 
 #if AMXX_VERSION_NUM < 183
 	#define MAX_PLAYERS 32
